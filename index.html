@@ -1006,6 +1006,259 @@
 
   .success-close:hover { transform: scale(1.05); box-shadow: 0 5px 20px rgba(255,107,0,0.5); }
 
+  /* ===== STEP INDICATOR ===== */
+  .step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 8px;
+    padding: 15px 10px 0;
+  }
+
+  .step-dot {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: rgba(255,107,0,0.1);
+    border: 2px solid rgba(255,107,0,0.2);
+    color: rgba(255,215,0,0.3);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 12px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.4s;
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+
+  .step-dot.active {
+    background: linear-gradient(135deg, #FF6B00, #C9A227);
+    border-color: var(--gold);
+    color: #1A0800;
+    box-shadow: 0 0 15px rgba(255,107,0,0.5);
+  }
+
+  .step-dot.done {
+    background: rgba(0,150,0,0.3);
+    border-color: rgba(0,200,0,0.5);
+    color: #90EE90;
+  }
+
+  .step-line {
+    flex: 1;
+    height: 2px;
+    background: rgba(255,107,0,0.15);
+    max-width: 50px;
+    transition: background 0.4s;
+  }
+
+  .step-line.done { background: rgba(0,200,0,0.4); }
+
+  .step-labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px 15px;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: rgba(255,215,0,0.35);
+  }
+
+  .step-labels span { text-align: center; flex: 1; }
+
+  /* ===== FORM STEPS ===== */
+  .form-step { display: none; animation: fadeSlideUp 0.4s ease; }
+  .form-step.active { display: block; }
+
+  .form-section-head {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    background: rgba(255,215,0,0.05);
+    border: 1px solid rgba(255,215,0,0.15);
+    border-radius: 6px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* ===== SEVA GRID ===== */
+  .seva-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 5px;
+  }
+
+  .seva-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 10px;
+    background: rgba(255,107,0,0.05);
+    border: 1px solid rgba(255,107,0,0.2);
+    color: rgba(255,215,0,0.5);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+    gap: 4px;
+  }
+
+  .seva-btn.selected, .seva-btn:hover {
+    background: rgba(255,107,0,0.2);
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 0 4px 15px rgba(255,107,0,0.2);
+  }
+
+  .seva-icon { font-size: 22px; }
+  .seva-name { font-family: 'Cinzel Decorative', serif; font-size: 10px; letter-spacing: 1px; }
+  .seva-hindi { font-family: 'Tiro Devanagari Hindi', serif; font-size: 13px; }
+
+  /* ===== FAMILY MEMBER BOX ===== */
+  .family-member-box {
+    background: rgba(255,215,0,0.03);
+    border: 1px solid rgba(255,215,0,0.12);
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  .family-member-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 11px;
+    color: rgba(255,215,0,0.6);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,215,0,0.1);
+  }
+
+  /* ===== CHILDREN ===== */
+  .child-entry {
+    background: rgba(255,107,0,0.05);
+    border: 1px solid rgba(255,107,0,0.15);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    position: relative;
+    animation: fadeSlideUp 0.3s ease;
+  }
+
+  .child-entry .child-label {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 9px;
+    color: rgba(255,215,0,0.4);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .remove-child-btn {
+    position: absolute;
+    top: 8px; right: 8px;
+    background: rgba(255,0,0,0.15);
+    border: 1px solid rgba(255,0,0,0.2);
+    color: #FF6B6B;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .remove-child-btn:hover { background: rgba(255,0,0,0.3); }
+
+  .add-child-btn {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255,215,0,0.05);
+    border: 1px dashed rgba(255,215,0,0.25);
+    color: rgba(255,215,0,0.5);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 8px;
+    transition: all 0.3s;
+  }
+
+  .add-child-btn:hover {
+    background: rgba(255,215,0,0.1);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ===== UPLOAD BOXES ===== */
+  .upload-box {
+    border: 2px dashed rgba(255,107,0,0.3);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: rgba(255,107,0,0.03);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .upload-box:hover {
+    border-color: var(--gold);
+    background: rgba(255,215,0,0.05);
+  }
+
+  .upload-box.uploaded {
+    border-color: rgba(0,200,0,0.4);
+    background: rgba(0,150,0,0.08);
+  }
+
+  .upload-icon { font-size: 32px; margin-bottom: 8px; }
+
+  .upload-text {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgba(255,215,0,0.6);
+    margin-bottom: 4px;
+  }
+
+  .upload-sub {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 13px;
+    color: rgba(255,215,0,0.4);
+    margin-bottom: 6px;
+  }
+
+  .upload-hint {
+    font-size: 11px;
+    color: rgba(255,215,0,0.25);
+    letter-spacing: 1px;
+  }
+
+  .upload-done-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #90EE90;
+  }
+
+  .upload-done-info .done-icon { font-size: 20px; }
+
+  .upload-note {
+    background: rgba(255,215,0,0.04);
+    border: 1px solid rgba(255,215,0,0.1);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: rgba(255,215,0,0.35);
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+  }
+
   /* ===== DIVIDER ===== */
   .divine-divider {
     text-align: center;
@@ -1028,10 +1281,11 @@
     .katha-select-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
   }
-  .small-img {
+
+ .small-img {
     width: 250px;   /* jitni chahiye utni size */
-    height: auto; 
-    border-radius: 20px;  /* ratio maintain rahega */
+    height: auto;
+    border-radius: 30px;  /* ratio maintain rahega */
 }
 </style>
 </head>
@@ -1312,62 +1566,238 @@
     <div class="form-title">KATHA REGISTRATION</div>
     <div class="form-title-hindi">कथा आवेदन पत्र</div>
 
-    <div class="form-box">
-      <label class="form-label">KATHA CHUNEIN / कथा चुनें</label>
-      <div class="katha-select-grid">
-        <button class="katha-select-btn selected" id="kb1" onclick="selectKathaBtn(this,'Shiv Mahapuran')">
-          <span class="k-icon">🔱</span>Shiv Mahapuran
-        </button>
-        <button class="katha-select-btn" id="kb2" onclick="selectKathaBtn(this,'Shreemad Bhagwat')">
-          <span class="k-icon">🪈</span>Bhagwat Katha
-        </button>
-        <button class="katha-select-btn" id="kb3" onclick="selectKathaBtn(this,'Ramayan Katha')">
-          <span class="k-icon">🏹</span>Ramayan Katha
-        </button>
-        <button class="katha-select-btn" id="kb4" onclick="selectKathaBtn(this,'Devi Bhagwat')">
-          <span class="k-icon">🌺</span>Devi Bhagwat
+    <!-- STEP INDICATOR -->
+    <div class="step-indicator">
+      <div class="step-dot active" id="sdot1">1</div>
+      <div class="step-line" id="sline1"></div>
+      <div class="step-dot" id="sdot2">2</div>
+      <div class="step-line" id="sline2"></div>
+      <div class="step-dot" id="sdot3">3</div>
+      <div class="step-line" id="sline3"></div>
+      <div class="step-dot" id="sdot4">4</div>
+    </div>
+    <div class="step-labels">
+      <span>Personal</span><span>Education</span><span>Family</span><span>Documents</span>
+    </div>
+
+    <!-- ======= STEP 1: PERSONAL INFO ======= -->
+    <div class="form-step active" id="step1">
+      <div class="form-box">
+        <div class="form-section-head">👤 Personal Information / व्यक्तिगत जानकारी</div>
+
+        <label class="form-label">SEVA TYPE / सेवा प्रकार *</label>
+        <div class="seva-grid">
+          <button class="seva-btn selected" onclick="selectSeva(this,'antyodaya')">
+            <span class="seva-icon">🙏</span>
+            <span class="seva-name">Antyodaya</span>
+            <span class="seva-hindi">अंत्योदय</span>
+          </button>
+          <button class="seva-btn" onclick="selectSeva(this,'bpl')">
+            <span class="seva-icon">🌿</span>
+            <span class="seva-name">BPL</span>
+            <span class="seva-hindi">बीपीएल</span>
+          </button>
+          <button class="seva-btn" onclick="selectSeva(this,'apl')">
+            <span class="seva-icon">🔶</span>
+            <span class="seva-name">APL</span>
+            <span class="seva-hindi">एपीएल</span>
+          </button>
+          <button class="seva-btn" onclick="selectSeva(this,'other')">
+            <span class="seva-icon">✨</span>
+            <span class="seva-name">Other</span>
+            <span class="seva-hindi">अन्य</span>
+          </button>
+        </div>
+
+        <label class="form-label">FULL NAME / पूरा नाम *</label>
+        <input type="text" class="divine-input" id="fFullName" placeholder="Apna poora naam likhen...">
+
+        <label class="form-label">CONTACT NAME / संपर्क व्यक्ति का नाम</label>
+        <input type="text" class="divine-input" id="fContactName" placeholder="Contact person ka naam...">
+
+        <label class="form-label">EMAIL ADDRESS / ईमेल *</label>
+        <input type="email" class="divine-input" id="fEmail" placeholder="example@email.com">
+
+        <label class="form-label">MOBILE NUMBER / मोबाइल नंबर *</label>
+        <input type="tel" class="divine-input" id="fMobile" placeholder="+91 XXXXX XXXXX">
+
+        <label class="form-label">PIN CODE / पिन कोड *</label>
+        <input type="text" class="divine-input" id="fPinCode" placeholder="6-digit PIN code..." maxlength="6" oninput="this.value=this.value.replace(/\D/g,'')">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">CITY / शहर *</label>
+            <input type="text" class="divine-input" id="fcity" placeholder="Shahar...">
+          </div>
+          <div class="form-group">
+            <label class="form-label">STATE / राज्य *</label>
+            <input type="text" class="divine-input" id="fstate" placeholder="Rajya...">
+          </div>
+        </div>
+
+        <label class="form-label">COUNTRY / देश *</label>
+        <select class="divine-select" id="fCountry">
+          <option value="">— Desh Chunein —</option>
+          <option value="in">🇮🇳 India — भारत</option>
+          <option value="us">🇺🇸 United States</option>
+          <option value="uk">🇬🇧 United Kingdom</option>
+          <option value="ca">🇨🇦 Canada</option>
+          <option value="au">🇦🇺 Australia</option>
+          <option value="ae">🇦🇪 UAE</option>
+          <option value="sg">🇸🇬 Singapore</option>
+          <option value="nz">🇳🇿 New Zealand</option>
+          <option value="other">🌐 Other</option>
+        </select>
+
+        <button class="primary-btn" onclick="goStep(2)" style="margin-top:20px;">
+          AAGE BADHEIN →
         </button>
       </div>
+    </div>
 
-      <label class="form-label">AAPKA NAAM / आपका नाम</label>
-      <input type="text" class="divine-input" id="fname" placeholder="Poora Naam Likhen..." oninput="document.getElementById('nameCount').textContent=this.value.length+'/50'">
-      <div class="char-count" id="nameCount">0/50</div>
+    <!-- ======= STEP 2: EDUCATIONAL DETAILS ======= -->
+    <div class="form-step" id="step2">
+      <div class="form-box">
+        <div class="form-section-head">🎓 Educational Details / शैक्षिक विवरण</div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">SHAHAR / शहर</label>
-          <input type="text" class="divine-input" id="fcity" placeholder="Shahar...">
+        <label class="form-label">HIGHEST QUALIFICATION / उच्चतम योग्यता *</label>
+        <select class="divine-select" id="fQualification">
+          <option value="">— Yogyata Chunein —</option>
+          <option>No Formal Education / कोई शिक्षा नहीं</option>
+          <option>Primary (1st–5th) / प्राथमिक</option>
+          <option>Middle (6th–8th) / माध्यमिक</option>
+          <option>High School (10th) / हाई स्कूल</option>
+          <option>Intermediate (12th) / इंटरमीडिएट</option>
+          <option>Diploma / डिप्लोमा</option>
+          <option>Graduate (B.A./B.Sc./B.Com) / स्नातक</option>
+          <option>Post Graduate (M.A./M.Sc.) / स्नातकोत्तर</option>
+          <option>Doctorate (Ph.D.) / डॉक्टरेट</option>
+          <option>Other / अन्य</option>
+        </select>
+
+        <label class="form-label">LAST ATTENDED SCHOOL / अंतिम विद्यालय का नाम *</label>
+        <input type="text" class="divine-input" id="fSchool" placeholder="School / College ka naam...">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">PASSING YEAR / उत्तीर्ण वर्ष</label>
+            <input type="text" class="divine-input" id="fPassYear" placeholder="e.g. 2010" maxlength="4" oninput="this.value=this.value.replace(/\D/g,'')">
+          </div>
+          <div class="form-group">
+            <label class="form-label">PERCENTAGE / प्रतिशत</label>
+            <input type="text" class="divine-input" id="fPercent" placeholder="e.g. 75%">
+          </div>
         </div>
-        <div class="form-group">
-          <label class="form-label">RAJYA / राज्य</label>
-          <input type="text" class="divine-input" id="fstate" placeholder="Rajya...">
+
+        <label class="form-label">SCHOOL / COLLEGE ADDRESS / पता</label>
+        <input type="text" class="divine-input" id="fSchoolAddr" placeholder="School ka shehar / rajya...">
+
+        <div style="display:flex;gap:10px;margin-top:20px;">
+          <button class="primary-btn" onclick="goStep(1)" style="background:rgba(255,107,0,0.15);border:1px solid rgba(255,107,0,0.3);color:var(--saffron);flex:1;">
+            ← WAPIS
+          </button>
+          <button class="primary-btn" onclick="goStep(3)" style="flex:2;">
+            AAGE BADHEIN →
+          </button>
         </div>
       </div>
+    </div>
 
-      <label class="form-label">KATHA KI TITHI / कथा की तिथि</label>
-      <input type="date" class="divine-input" id="fdate">
+    <!-- ======= STEP 3: FAMILY DETAILS ======= -->
+    <div class="form-step" id="step3">
+      <div class="form-box">
+        <div class="form-section-head">👨‍👩‍👧‍👦 Family Details / पारिवारिक विवरण</div>
 
-      <label class="form-label">STHAL / स्थल</label>
-      <input type="text" class="divine-input" id="fvenue" placeholder="Ghar, Mandir, ya Koi Sthan...">
+        <div class="family-member-box">
+          <div class="family-member-title">👨 Father / पिता</div>
+          <label class="form-label">FATHER'S NAME / पिता का नाम</label>
+          <input type="text" class="divine-input" id="fFatherName" placeholder="Pita ji ka naam...">
+          <label class="form-label">FATHER'S AGE / पिता की आयु</label>
+          <input type="number" class="divine-input" id="fFatherAge" placeholder="Age in years..." min="18" max="120">
+        </div>
 
-      <label class="form-label">PRAYOJAN / प्रयोजन (OPTIONAL)</label>
-      <select class="divine-select" id="focassion">
-        <option value="">— Select Prayojan —</option>
-        <option>Griha Pravesh / गृह प्रवेश</option>
-        <option>Vivah / विवाह</option>
-        <option>Shradh / श्राद्ध</option>
-        <option>Navratri / नवरात्रि</option>
-        <option>Janmotsav / जन्मोत्सव</option>
-        <option>Pitru Paksha</option>
-        <option>Anya / अन्य</option>
-      </select>
+        <div class="family-member-box" style="margin-top:15px;">
+          <div class="family-member-title">👩 Mother / माता</div>
+          <label class="form-label">MOTHER'S NAME / माता का नाम</label>
+          <input type="text" class="divine-input" id="fMotherName" placeholder="Mata ji ka naam...">
+          <label class="form-label">MOTHER'S AGE / माता की आयु</label>
+          <input type="number" class="divine-input" id="fMotherAge" placeholder="Age in years..." min="18" max="120">
+        </div>
 
-      <label class="form-label">MOBILE NUMBER</label>
-      <input type="tel" class="divine-input" id="fmobile" placeholder="+91 XXXXX XXXXX">
+        <!-- CHILDREN SECTION -->
+        <div class="family-member-box" style="margin-top:15px;" id="childrenSection">
+          <div class="family-member-title">👶 Children / बच्चे</div>
+          <div id="childrenList"></div>
+          <button class="add-child-btn" onclick="addChild()">
+            ＋ BACHA JODEIN — बच्चा जोड़ें
+          </button>
+        </div>
 
-      <button class="primary-btn" onclick="submitForm()" style="margin-top:25px;">
-        🙏 AAVEDAN BHEJEIN — आवेदन भेजें
-      </button>
+        <div style="display:flex;gap:10px;margin-top:20px;">
+          <button class="primary-btn" onclick="goStep(2)" style="background:rgba(255,107,0,0.15);border:1px solid rgba(255,107,0,0.3);color:var(--saffron);flex:1;">
+            ← WAPIS
+          </button>
+          <button class="primary-btn" onclick="goStep(4)" style="flex:2;">
+            AAGE BADHEIN →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= STEP 4: DOCUMENT UPLOAD ======= -->
+    <div class="form-step" id="step4">
+      <div class="form-box">
+        <div class="form-section-head">📄 Document Upload / दस्तावेज़ अपलोड</div>
+
+        <!-- PHOTO -->
+        <label class="form-label">PHOTO / फोटो *</label>
+        <div class="upload-box" id="photoBox" onclick="document.getElementById('photoInput').click()">
+          <div class="upload-preview" id="photoPreview">
+            <div class="upload-icon">🖼️</div>
+            <div class="upload-text">Apni Photo Upload Karein</div>
+            <div class="upload-sub">अपनी फोटो अपलोड करें</div>
+            <div class="upload-hint">JPG, PNG • Max 5MB</div>
+          </div>
+        </div>
+        <input type="file" id="photoInput" accept="image/*" style="display:none" onchange="previewDoc('photoInput','photoPreview','photoBox','🖼️','Photo')">
+
+        <!-- AADHAAR CARD -->
+        <label class="form-label" style="margin-top:18px;">AADHAAR CARD / आधार कार्ड *</label>
+        <div class="upload-box" id="aadhaarBox" onclick="document.getElementById('aadhaarInput').click()">
+          <div class="upload-preview" id="aadhaarPreview">
+            <div class="upload-icon">🪪</div>
+            <div class="upload-text">Aadhaar Card Upload Karein</div>
+            <div class="upload-sub">आधार कार्ड अपलोड करें</div>
+            <div class="upload-hint">JPG, PNG, PDF • Max 5MB</div>
+          </div>
+        </div>
+        <input type="file" id="aadhaarInput" accept="image/*,.pdf" style="display:none" onchange="previewDoc('aadhaarInput','aadhaarPreview','aadhaarBox','🪪','Aadhaar Card')">
+
+        <!-- LIGHT BILL -->
+        <label class="form-label" style="margin-top:18px;">LIGHT BILL / बिजली बिल *</label>
+        <div class="upload-box" id="lightBox" onclick="document.getElementById('lightInput').click()">
+          <div class="upload-preview" id="lightPreview">
+            <div class="upload-icon">💡</div>
+            <div class="upload-text">Light Bill Upload Karein</div>
+            <div class="upload-sub">बिजली बिल अपलोड करें</div>
+            <div class="upload-hint">JPG, PNG, PDF • Max 5MB</div>
+          </div>
+        </div>
+        <input type="file" id="lightInput" accept="image/*,.pdf" style="display:none" onchange="previewDoc('lightInput','lightPreview','lightBox','💡','Light Bill')">
+
+        <div class="upload-note">
+          🔒 Aapke documents surakshit hain। Sirf verification ke liye upyog honge।
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:20px;">
+          <button class="primary-btn" onclick="goStep(3)" style="background:rgba(255,107,0,0.15);border:1px solid rgba(255,107,0,0.3);color:var(--saffron);flex:1;">
+            ← WAPIS
+          </button>
+          <button class="primary-btn" onclick="submitForm()" style="flex:2;">
+            🙏 SUBMIT KAREIN
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class="divine-divider" style="margin-top:20px;">⸻ 🕉 ⸻</div>
@@ -1534,45 +1964,171 @@
     showTab('applicationTab', document.querySelectorAll('.nav-tab')[2]);
     document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.nav-tab')[2].classList.add('active');
-    // Highlight matching katha btn
-    const btns = document.querySelectorAll('.katha-select-btn');
-    btns.forEach(b => b.classList.remove('selected'));
-    btns.forEach(b => { if (b.textContent.trim().includes(name.split(' ')[0])) b.classList.add('selected'); });
     window.scrollTo(0, 0);
   }
 
-  function selectKathaBtn(btn, name) {
-    document.querySelectorAll('.katha-select-btn').forEach(b => b.classList.remove('selected'));
+  // ===== SEVA SELECTION =====
+  function selectSeva(btn, type) {
+    document.querySelectorAll('.seva-btn').forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
-    currentKatha = name;
+  }
+
+  // ===== STEP NAVIGATION =====
+  function goStep(n) {
+    // Validate step 1
+    if (n === 2) {
+      const name = document.getElementById('fFullName').value.trim();
+      const email = document.getElementById('fEmail').value.trim();
+      const mobile = document.getElementById('fMobile').value.trim();
+      const city = document.getElementById('fcity').value.trim();
+      const country = document.getElementById('fCountry').value;
+      if (!name) { shakeInput('fFullName'); return; }
+      if (!email || !email.includes('@')) { shakeInput('fEmail'); return; }
+      if (!mobile) { shakeInput('fMobile'); return; }
+      if (!city) { shakeInput('fcity'); return; }
+      if (!country) { shakeInput('fCountry'); return; }
+    }
+    // Validate step 2
+    if (n === 3) {
+      const qual = document.getElementById('fQualification').value;
+      const school = document.getElementById('fSchool').value.trim();
+      if (!qual) { shakeInput('fQualification'); return; }
+      if (!school) { shakeInput('fSchool'); return; }
+    }
+
+    document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('step' + n).classList.add('active');
+
+    // Update step dots
+    for (let i = 1; i <= 4; i++) {
+      const dot = document.getElementById('sdot' + i);
+      dot.classList.remove('active', 'done');
+      if (i < n) dot.classList.add('done');
+      else if (i === n) dot.classList.add('active');
+    }
+    // Update step lines
+    for (let i = 1; i <= 3; i++) {
+      const line = document.getElementById('sline' + i);
+      if (line) { line.classList.toggle('done', i < n); }
+    }
+    window.scrollTo(0, 0);
+  }
+
+  // ===== ADD CHILD =====
+  let childCount = 0;
+  function addChild() {
+    childCount++;
+    const id = 'child_' + childCount;
+    const div = document.createElement('div');
+    div.className = 'child-entry';
+    div.id = id;
+    div.innerHTML = `
+      <div class="child-label">CHILD ${childCount} / बच्चा ${childCount}</div>
+      <button class="remove-child-btn" onclick="removeChild('${id}')">✕</button>
+      <label class="form-label">NAME / नाम</label>
+      <input type="text" class="divine-input" placeholder="Bacche ka naam..." style="margin-bottom:8px;">
+      <div style="display:flex;gap:8px;">
+        <div style="flex:1;">
+          <label class="form-label">AGE / आयु</label>
+          <input type="number" class="divine-input" placeholder="Age..." min="0" max="30">
+        </div>
+        <div style="flex:1;">
+          <label class="form-label">GENDER / लिंग</label>
+          <select class="divine-select" style="padding:12px;">
+            <option value="">—</option>
+            <option>Boy / लड़का</option>
+            <option>Girl / लड़की</option>
+          </select>
+        </div>
+      </div>
+    `;
+    document.getElementById('childrenList').appendChild(div);
+  }
+
+  function removeChild(id) {
+    const el = document.getElementById(id);
+    if (el) { el.style.animation = 'none'; el.style.opacity = '0'; el.style.transform = 'scale(0.9)'; setTimeout(() => el.remove(), 200); }
+  }
+
+  // ===== DOCUMENT PREVIEW =====
+  function previewDoc(inputId, previewId, boxId, icon, label) {
+    const input = document.getElementById(inputId);
+    const preview = document.getElementById(previewId);
+    const box = document.getElementById(boxId);
+    const file = input.files[0];
+    if (!file) return;
+
+    const sizeMB = (file.size / 1024 / 1024).toFixed(2);
+    box.classList.add('uploaded');
+
+    if (file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        if (inputId === 'photoInput') {
+          preview.innerHTML = `
+            <img src="${e.target.result}" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid rgba(0,200,0,0.5);margin-bottom:8px;">
+            <div class="upload-done-info"><span class="done-icon">✅</span><span>${file.name}</span></div>
+            <div class="upload-hint" style="color:rgba(0,200,0,0.5);">${sizeMB} MB • Uploaded</div>
+          `;
+        } else {
+          preview.innerHTML = `
+            <img src="${e.target.result}" style="width:100px;height:70px;object-fit:cover;border-radius:6px;border:2px solid rgba(0,200,0,0.5);margin-bottom:8px;">
+            <div class="upload-done-info"><span class="done-icon">✅</span><span>${label} Uploaded</span></div>
+            <div class="upload-hint" style="color:rgba(0,200,0,0.5);">${sizeMB} MB • ${file.name.substring(0,25)}</div>
+          `;
+        }
+      };
+      reader.readAsDataURL(file);
+    } else {
+      preview.innerHTML = `
+        <div class="upload-done-info"><span class="done-icon">✅</span><span>${icon} ${label} Uploaded</span></div>
+        <div class="upload-hint" style="color:rgba(0,200,0,0.5);margin-top:5px;">${sizeMB} MB • ${file.name.substring(0,25)}</div>
+      `;
+    }
   }
 
   // ===== FORM SUBMIT =====
   function submitForm() {
-    const name = document.getElementById('fname').value.trim();
+    const name = document.getElementById('fFullName').value.trim();
     const city = document.getElementById('fcity').value.trim();
-    const date = document.getElementById('fdate').value;
-    const mobile = document.getElementById('fmobile').value.trim();
+    const mobile = document.getElementById('fMobile').value.trim();
 
-    if (!name) { shakeInput('fname'); return; }
-    if (!city) { shakeInput('fcity'); return; }
-    if (!date) { shakeInput('fdate'); return; }
-    if (!mobile) { shakeInput('fmobile'); return; }
-
-    const app = { katha: currentKatha, name, city, date, mobile, id: Date.now() };
+    const app = {
+      name: name || 'N/A',
+      city: city || 'N/A',
+      mobile: mobile || 'N/A',
+      time: new Date().toLocaleDateString('hi-IN'),
+      id: Date.now()
+    };
     applications.push(app);
     updateApplicationsList();
 
     document.getElementById('successModal').classList.add('show');
-    clearForm();
-  }
 
-  function clearForm() {
-    ['fname','fcity','fstate','fdate','fvenue','fmobile'].forEach(id => {
-      document.getElementById(id).value = '';
-    });
-    document.getElementById('focassion').value = '';
-    document.getElementById('nameCount').textContent = '0/50';
+    // Reset form to step 1
+    setTimeout(() => {
+      goStep(1);
+      ['fFullName','fContactName','fEmail','fMobile','fPinCode','fcity','fstate',
+       'fFatherName','fFatherAge','fMotherName','fMotherAge','fSchool','fPassYear','fPercent','fSchoolAddr'].forEach(id => {
+        const el = document.getElementById(id);
+        if(el) el.value = '';
+      });
+      document.getElementById('fCountry').value = '';
+      document.getElementById('fQualification').value = '';
+      document.getElementById('childrenList').innerHTML = '';
+      childCount = 0;
+      ['photoBox','aadhaarBox','lightBox'].forEach(id => {
+        document.getElementById(id).classList.remove('uploaded');
+      });
+      ['photoPreview','aadhaarPreview','lightPreview'].forEach((id,i) => {
+        const icons = ['🖼️','🪪','💡'];
+        const labels = ['Photo','Aadhaar Card','Light Bill'];
+        const subs = ['अपनी फोटो अपलोड करें','आधार कार्ड अपलोड करें','बिजली बिल अपलोड करें'];
+        const texts = ['Apni Photo Upload Karein','Aadhaar Card Upload Karein','Light Bill Upload Karein'];
+        const hints = ['JPG, PNG • Max 5MB','JPG, PNG, PDF • Max 5MB','JPG, PNG, PDF • Max 5MB'];
+        document.getElementById(id).innerHTML = `<div class="upload-icon">${icons[i]}</div><div class="upload-text">${texts[i]}</div><div class="upload-sub">${subs[i]}</div><div class="upload-hint">${hints[i]}</div>`;
+      });
+    }, 500);
   }
 
   function updateApplicationsList() {
